@@ -1,3 +1,4 @@
+using { SalesOrderA2X } from '../srv/external/SalesOrderA2X.cds'; 
 namespace com.sap;
 
 using {cuid} from '@sap/cds/common';
