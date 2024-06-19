@@ -29,7 +29,8 @@ entity S4SalesOrders      as
             SoldToParty           as customerId,
             SalesOrderDate        as salesOrderDate,
             TotalNetAmount        as totalAmount,
-            OverallDeliveryStatus as status
+            OverallDeliveryStatus as status,
+            AdditionalValueDays as criticality
         };
 
 entity NorthwindCustomers as

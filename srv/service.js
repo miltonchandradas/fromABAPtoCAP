@@ -111,4 +111,18 @@ module.exports = async (srv) => {
         return orders
     })
 
+    srv.after("READ", S4SalesOrders, (data) => {
+        const orders = Array.isArray(data) ? data : [data];
+
+        orders.forEach(order => {
+            if (order.status === 'C') {
+                order.status = "Completed"
+                order.criticality = 3
+            } else {
+                order.status = "Over Due"
+                order.criticality = 1
+            }
+        })
+    })
+
 }

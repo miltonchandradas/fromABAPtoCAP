@@ -120,6 +120,7 @@ annotate service.S4SalesOrders with @(
         $Type: 'UI.DataField',
         Value: status,
         Label: 'Status',
+        Criticality: criticality,
     },
     {
         $Type: 'UI.DataField',
