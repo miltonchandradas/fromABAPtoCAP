@@ -1,1 +1,57 @@
-{}
+{
+    "cds": {
+        "requires": {
+            "[development]": {
+                "auth": {
+                    "kind": "mocked",
+                    "users": {
+                        "beth": {
+                            "password": "password",
+                            "user_name": "beth",
+                            "email": "Beth@acme.com",
+                            "roles": [
+                                "Manager"
+                            ],
+                            "attributes": {
+                                "country": [
+                                    "Germany",
+                                    "Mexico",
+                                    "UK",
+                                    "Sweden",
+                                    "France",
+                                    "Spain",
+                                    "Canada",
+                                    "Argentina",
+                                    "Switzerland",
+                                    "Brazil"
+                                ]
+                            }
+                        },
+                        "bob": {
+                            "password": "password",
+                            "user_name": "bob",
+                            "email": "bob@acme.com",
+                            "roles": [
+                                "Support"
+                            ],
+                            "attributes": {
+                                "country": [
+                                    "Germany",
+                                    "Mexico",
+                                    "UK",
+                                    "Sweden",
+                                    "France",
+                                    "Spain",
+                                    "Canada",
+                                    "Argentina",
+                                    "Switzerland",
+                                    "Brazil"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -3,6 +3,12 @@ using {com.sap as my} from '../db/schema';
 @path: '/service/fromABAPtoCAPSvcs'
 service SalesService {
 
+    annotate Customers with @restrict :
+    [
+        { grant : [ '*' ], to : [ 'Manager' ] },
+        { grant : [ 'READ' ], to : [ 'Support' ] }
+    ];
+
     @readonly
     entity MappingCustomers   as projection on my.MappingCustomers;
 

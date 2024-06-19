@@ -1,4 +1,5 @@
 const cds = require("@sap/cds");
+const LOG = cds.log();
 
 module.exports = async (srv) => {
     const { MappingCustomers, Customers, S4SalesOrders, NorthwindCustomers } = srv.entities;
@@ -123,6 +124,38 @@ module.exports = async (srv) => {
                 order.criticality = 1
             }
         })
+    })
+
+
+    srv.on("error", (err, req) => {
+        console.log("Logged in user: ", req.user?.id);
+        
+        switch (err.message) {
+            case "UNIQUE_CONSTRAINT_VIOLATION":
+            case "ENTITY_ALREADY_EXISTS":
+                err.message = "The entry already exists.";
+                break;
+
+            case "Unauthorized":
+            case "forbidden":
+                err.message = "Unauthorized - Please login with a valid user.";
+                break;
+
+            case "Precondition Failed":
+                err.message =
+                    "There is a more recent version of the JobAction available.  Please refresh the browser and try again.";
+                break;
+
+            case "404":
+                err.message =
+                    "The requested resource was not found.  Please refresh the browser and try again.";
+                break;
+
+            default:
+                LOG._info && LOG.info("Some middleware error...");
+                LOG._info && LOG.info("ERROR MESSAGE: ", err.message);
+                break;
+        }
     })
 
 }

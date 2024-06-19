@@ -43,7 +43,7 @@
       },
       "auth": {
         "[development]": {
-          "kind": "dummy"
+          "kind": "mocked"
         },
         "[production]": {
           "kind": "xsuaa"
