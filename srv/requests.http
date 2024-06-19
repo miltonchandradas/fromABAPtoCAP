@@ -5,5 +5,10 @@ GET http://localhost:4004/service/fromABAPtoCAPSvcs/Customers
 ### GET Northwind Customers
 GET http://localhost:4004/service/fromABAPtoCAPSvcs/NorthwindCustomers
 
+
 ### GET S4 Sales Orders
 GET http://localhost:4004/service/fromABAPtoCAPSvcs/S4SalesOrders
+
+
+### GET Customers
+GET http://localhost:4004/service/fromABAPtoCAPSvcs/Customers?$select=customerId,customerName,contactName,address,city,country,phone&$expand=orders
