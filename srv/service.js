@@ -10,6 +10,10 @@ module.exports = async (srv) => {
     // connect to Northwind
     const Northwind_Service = await cds.connect.to("northwind");
 
+    srv.before("*", async (req) => {
+        console.log("Logged in user: ", req.user?.id);
+    })
+    
     srv.on("READ", Customers, async (req) => {
 
         const getCustomers = async () => {
