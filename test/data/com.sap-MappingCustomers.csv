@@ -1,0 +1,41 @@
+ID,s4CustomerId,nwCustomerId,nwCustomerName
+5349d686-99f7-48c5-9db2-a2f4ab892f85,17100001,ALFKI,Alfreds Futterkiste
+88a72b69-7edc-4527-80a6-ca0bad98a8fb,USCU-CUS02,ANATR,Ana Trujillo Emparedados y helados
+cdd02583-0fef-4cd1-8806-ecf96c8ecfbc,17100003,ANTON,Antonio Moreno Taquería
+3f04d222-474f-407a-8813-30295377a25b,USCU-CUS01,AROUT,Around the Horn
+f70b3596-d6f4-4fe8-84bd-4c1488e3f57d,USCU-CUS03,BERGS,Berglunds snabbköp
+ef713dee-75e3-4f4f-a914-162f3bd1a4e7,USCU-CUS04,BLAUS,Blauer See Delikatessen
+a167fccd-f653-4f54-973c-60371a5b990b,USCU-CUS05,BLONP,Blondesddsl père et fils
+9dec8fc4-b57c-433e-9185-2f04e779b6bb,USCU-CUS06,BOLID,Bólido Comidas preparadas
+ae014e56-43d4-4c07-a00f-852ef635cb93,USCU-CU04,BONAP,Bon app'
+afb40962-9f46-4a1b-acc5-0a571cc059cb,USCU-CUS07,BOTTM,Bottom-Dollar Markets
+a519581b-5916-4914-87e7-115d3ad5aa43,USCU-CUS24,BSBEV,B's Beverages
+88411824-1327-4297-abbd-59f3c746d398,USCU-CUS21,CACTU,Cactus Comidas para llevar
+35b393bf-27d6-410c-8b8a-f8afe773d240,USCU-CUS22,CENTC,Centro comercial Moctezuma
+f5310d21-c090-49c2-b395-b94abaf66dbf,USCU-CUS08,CHOPS,Chop-suey Chinese
+0adff6f5-8eb6-438a-b6fa-116e6f3114e3,USCU-CUS09,COMMI,Comércio Mineiro
+495b6870-3d45-4ae2-b943-12afdb1c0337,USCU_L01,CONSH,Consolidated Holdings
+c465e304-3c8c-4201-aed3-fedab168349d,USCU_L03,DRACD,Drachenblut Delikatessen
+f9fa9be5-186f-4f42-b4bf-9f8c6ed854df,USCU_L07,DUMON,Du monde entier
+9babb7ac-7f9d-4b53-b91e-e7b4a1ec1a09,USCU_L09,EASTC,Eastern Connection
+dc103801-bf72-45b3-833e-bc4e02f324b4,USCU_L02,ERNSH,Ernst Handel
+93a42495-1ced-42e4-bb9b-3da1b4781973,USCU_L06,FAMIA,Familia Arquibaldo
+0b0c40bc-6f4f-4012-b44c-e9f90e85f224,USCU_S16,FISSA,FISSA Fabrica Inter. Salchichas S.A.
+e3874769-29ce-42af-91ef-b5a5d140fc34,USCU_L10,FOLIG,Folies gourmandes
+b1b723af-dd7e-49ea-b94a-ced4eb35cf29,USCU_S07,FOLKO,Folk och fä HB
+acbf47aa-bd01-4238-ac27-c024f54372c1,USCU_S03,FRANK,Frankenversand
+79f74a59-d9c2-4e2d-9c1b-fe2a218d8433,USCU_S09,FRANR,France restauration
+10b9b328-d82e-4f0e-93e3-052f83ca49b1,USCU_L05,FRANS,Franchi S.p.A.
+3a0c9a7d-b993-44ef-90bf-be09f8d6c50a,USCU_S10,FURIB,Furia Bacalhau e Frutos do Mar
+943d2063-2147-480c-be8f-2584251fdb80,USCU_L04,GALED,Galería del gastrónomo
+9c31b4cc-1639-4ef0-a6e3-0de6caec6927,USCU_S02,GODOS,Godos Cocina Típica
+9d60fc53-7b48-48ec-bda4-00a5bca8b4d3,USCU_S15,GOURL,Gourmet Lanchonetes
+11c3d9be-2988-47e6-bdf0-95d959fc31fb,USCU_S04,GREAL,Great Lakes Food Market
+55b99fef-5901-44e3-ad19-a31995ffc054,USCU_S12,GROSR,GROSELLA-Restaurante
+644e717b-837f-413f-895a-590dd8db0b4d,USCU_L08,HANAR,Hanari Carnes
+dbe867f2-beb5-4b10-9e16-feaaabb59f70,USCU_S05,HILAA,HILARION-Abastos
+f0c1ba66-4ab1-4554-925e-9c4334d61554,USCU_S14,HUNGC,Hungry Coyote Import Store
+d88bc196-e7ad-40ec-bd17-eb4344cc9e22,USCU_S17,HUNGO,Hungry Owl All-Night Grocers
+5219bf3b-970e-4477-9382-f8aa1b88c1e0,USCU_S06,ISLAT,Island Trading
+8e6760ef-6a33-4941-890d-4ae789bbf5a9,USCU_S13,KOENE,Königlich Essen
+166b2175-0243-4fa0-85bd-60e92a39c42d,USCU_S11,LACOR,La corne d'abondance
