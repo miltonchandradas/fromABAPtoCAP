@@ -9,6 +9,14 @@ module.exports = async (srv) => {
     // connect to Northwind
     const Northwind_Service = await cds.connect.to("northwind");
 
+    srv.on("READ", Customers, async (req) => {
+        let customers = await Northwind_Service.send({
+            query: SELECT.from(NorthwindCustomers)
+        });
+
+        customers.$count = customers.length
+        return customers
+    })
 
     srv.on("READ", S4SalesOrders, async (req) => {
         let orders = await S4_Service.send({

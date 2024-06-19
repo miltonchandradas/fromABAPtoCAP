@@ -11,6 +11,18 @@ entity MappingCustomers : cuid {
     nwCustomerName : String(100);
 }
 
+entity Customers {
+    key customerId   : String;
+        customerName : String;
+        contactName  : String;
+        address      : String;
+        city         : String;
+        country      : String;
+        phone        : String;
+        s4CustomerId : String;
+        orders       : Association to many S4SalesOrders;
+};
+
 entity S4SalesOrders      as
         projection on SalesOrderA2X.A_SalesOrder {
             SalesOrder            as salesOrder,

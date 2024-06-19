@@ -7,6 +7,9 @@ service SalesService {
     entity MappingCustomers   as projection on my.MappingCustomers;
 
     @readonly
+    entity Customers   as projection on my.Customers;
+
+    @readonly
     entity S4SalesOrders      as projection on my.S4SalesOrders;
 
     @readonly
