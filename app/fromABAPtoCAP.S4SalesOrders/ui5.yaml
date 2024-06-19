@@ -1,0 +1,4 @@
+specVersion: "2.5"
+metadata:
+  name: fromABAPtoCAP.S4SalesOrders
+type: application

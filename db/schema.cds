@@ -35,7 +35,7 @@ entity S4SalesOrders      as
 entity NorthwindCustomers as
         projection on northwind.Customers {
             CustomerID  as customerId,
-            CompanyName as companyName,
+            CompanyName as customerName,
             ContactName as contactName,
             Address     as address,
             City        as city,
