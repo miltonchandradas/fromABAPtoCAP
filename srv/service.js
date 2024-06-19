@@ -10,10 +10,20 @@ module.exports = async (srv) => {
     const Northwind_Service = await cds.connect.to("northwind");
 
     srv.on("READ", Customers, async (req) => {
-        let customers = await Northwind_Service.send({
+        const customers = await Northwind_Service.send({
             query: SELECT.from(NorthwindCustomers)
         });
 
+        await Promise.all(
+            customers.map(async (customer) => {
+                let mapping = await SELECT.one.from(MappingCustomers).where({
+                    nwCustomerId: customer.customerId
+                })
+    
+                customer.s4CustomerId = mapping.s4CustomerId;
+            })
+        )
+        
         customers.$count = customers.length
         return customers
     })
