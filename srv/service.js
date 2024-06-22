@@ -1,28 +1,39 @@
 const cds = require("@sap/cds");
 
 module.exports = async (srv) => {
-    const { MappingCustomers, Customers, S4SalesOrders, NorthwindCustomers } = srv.entities;
+  const { MappingCustomers, Customers, S4SalesOrders, NorthwindCustomers } =
+    srv.entities;
 
-    // connect to S/4HANA
-    const S4_Service = await cds.connect.to("SalesOrderA2X");
+  // connect to S/4HANA
+  const S4_Service = await cds.connect.to("SalesOrderA2X");
 
-    // connect to Northwind
-    const Northwind_Service = await cds.connect.to("northwind");
+  // connect to Northwind
+  const Northwind_Service = await cds.connect.to("northwind");
 
+//   const delay = (ms) => {
+//     return new Promise((resolve) => setTimeout(resolve, ms));
+//   };
 
-    srv.on("READ", S4SalesOrders, async (req) => {
-        let orders = await S4_Service.send({
-            query: SELECT.from(S4SalesOrders)
-                .columns("salesOrder", "customerId", "salesOrderDate", "totalAmount", "status")
-                .limit(10),
-            headers: {
-                apikey: process.env.apikey,
-                Accept: "application/json"
-            },
-        });
+  srv.on("READ", S4SalesOrders, async (req) => {
+    // await delay(5000);
+    // return [];
+    let orders = await S4_Service.send({
+      query: SELECT.from(S4SalesOrders)
+        .columns(
+          "salesOrder",
+          "customerId",
+          "salesOrderDate",
+          "totalAmount",
+          "status"
+        )
+        .limit(10),
+      headers: {
+        apikey: process.env.apikey,
+        Accept: "application/json",
+      },
+    });
 
-        orders.$count = orders.length
-        return orders
-    })
-
-}
+    orders.$count = orders.length;
+    return orders;
+  });
+};
