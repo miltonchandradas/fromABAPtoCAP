@@ -1,7 +1,7 @@
 const cds = require("@sap/cds");
 
 module.exports = async (srv) => {
-  const { MappingCustomers, Customers, S4SalesOrders, NorthwindCustomers } =
+  const { MappingCustomers, S4SalesOrders, NorthwindCustomers } =
     srv.entities;
 
   // connect to S/4HANA
@@ -10,9 +10,9 @@ module.exports = async (srv) => {
   // connect to Northwind
   const Northwind_Service = await cds.connect.to("northwind");
 
-//   const delay = (ms) => {
-//     return new Promise((resolve) => setTimeout(resolve, ms));
-//   };
+  //   const delay = (ms) => {
+  //     return new Promise((resolve) => setTimeout(resolve, ms));
+  //   };
 
   srv.on("READ", S4SalesOrders, async (req) => {
     // await delay(5000);
