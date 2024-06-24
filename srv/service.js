@@ -16,8 +16,8 @@ module.exports = async (srv) => {
 
   // srv.before("READ", S4SalesOrders, async (req) => {
   //     req.reject({
-  //       code: 401,
-  //       message: "apikey is missing !!",
+  //       code: 500,
+  //       message: "Server is busy at this moment.  Please try again !!",
   //     });
   // });
 
