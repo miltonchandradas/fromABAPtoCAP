@@ -14,14 +14,12 @@ module.exports = async (srv) => {
   //     return new Promise((resolve) => setTimeout(resolve, ms));
   //   };
 
-  srv.before("READ", S4SalesOrders, async (req) => {
-    if (!req.headers.apikey) {
-      req.reject({
-        code: 401,
-        message: "apikey is missing !!",
-      });
-    }
-  });
+  // srv.before("READ", S4SalesOrders, async (req) => {
+  //     req.reject({
+  //       code: 401,
+  //       message: "apikey is missing !!",
+  //     });
+  // });
 
   srv.on("READ", S4SalesOrders, async (req) => {
     // await delay(5000);
