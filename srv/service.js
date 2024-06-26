@@ -9,7 +9,18 @@ module.exports = async (srv) => {
     // connect to Northwind
     const Northwind_Service = await cds.connect.to("northwind");
 
+    const delay = (ms) => {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    };
+
     srv.on("READ", Customers, async (req) => {
+
+        // await delay(10000)
+        // await delay(10000)
+
+        // await Promise.all([delay(10000), delay(10000)])
+
+        // return [];
 
         const getCustomers = async () => {
 
@@ -60,15 +71,16 @@ module.exports = async (srv) => {
             ({ expand, ref }) => expand && ref[0] === "orders"
         );
         console.log(req.query.SELECT.columns);
-        if (expandIndex < 0) return getCustomers();
+        if (expandIndex < 0 || (expandIndex && req.data?.customerId)) return getCustomers();
 
         let customers = await Northwind_Service.send({
             query: SELECT.from(NorthwindCustomers).limit(5)
         })
 
         await Promise.all(
-            customers.map(async (customer) => {
-                await getS4CustomerId(customer)
+            customers.map((customer) => {
+                customer = getS4CustomerId(customer)
+                return customer
             })
         )
 
@@ -76,8 +88,8 @@ module.exports = async (srv) => {
             customers = Array.isArray(customers) ? customers : [customers];
 
             return await Promise.all(
-                customers.map(async (customer) => {
-                    customer = await getS4Orders(customer)
+                customers.map((customer) => {
+                    customer = getS4Orders(customer)
                     return customer
                 })
             );
