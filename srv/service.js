@@ -62,16 +62,6 @@ module.exports = async (srv) => {
         console.log(req.query.SELECT.columns);
         if (expandIndex < 0) return getCustomers();
 
-        req.query.SELECT.columns.splice(expandIndex, 1);
-        if (
-            !req.query.SELECT.columns.find((column) =>
-                column.ref.find((ref) => ref == "orders")
-            )
-        ) {
-            req.query.SELECT.columns.push({ ref: ["orders_salesOrder"] });
-        }
-
-
         let customers = await Northwind_Service.send({
             query: SELECT.from(NorthwindCustomers).limit(5)
         })
