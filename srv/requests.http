@@ -15,7 +15,7 @@ GET http://localhost:4004/service/fromABAPtoCAPSvcs/S4SalesOrders
 
 
 ### GET Customers
-GET http://localhost:4004/service/fromABAPtoCAPSvcs/Customers('ALFKI')?$select=customerId,customerName,contactName,address,city,country,phone&$expand=orders
+GET http://localhost:4004/service/fromABAPtoCAPSvcs/Customers('ALFKI')?$expand=orders
 
 
 ### GET Customers
