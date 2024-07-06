@@ -1,3 +1,7 @@
+### GET metadata
+GET http://localhost:4004/service/fromABAPtoCAPSvcs/$metadata
+
+
 ### GET Customers
 GET http://localhost:4004/service/fromABAPtoCAPSvcs/Customers
 

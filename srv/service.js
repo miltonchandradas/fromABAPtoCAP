@@ -10,7 +10,21 @@ module.exports = async (srv) => {
   // connect to Northwind
   const Northwind_Service = await cds.connect.to("northwind");
 
+  const delay = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
   srv.on("READ", Customers, async (req) => {
+
+    // Sequential...
+    // await delay(10000)
+    // await delay(10000)
+    // return [];
+
+    // Parallel...
+    // await Promise.all([delay(10000), delay(10000)])
+    // return [];
+
     const mappings = await SELECT.from(MappingCustomers);
 
     const getCustomers = async () => {
