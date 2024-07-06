@@ -25,6 +25,8 @@ module.exports = async (srv) => {
     // await Promise.all([delay(10000), delay(10000)])
     // return [];
 
+    // Promise.all, Promise.any, Promise.race, Promise.allSettled
+
     const mappings = await SELECT.from(MappingCustomers);
 
     const getCustomers = async () => {
