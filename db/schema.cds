@@ -1,8 +1,7 @@
-
 namespace com.sap;
-using { SalesOrderA2X } from '../srv/external/SalesOrderA2X.cds'; 
-using { northwind } from '../srv/external/northwind.cds'; 
 
+using {SalesOrderA2X} from '../srv/external/SalesOrderA2X.cds';
+using {northwind} from '../srv/external/northwind.cds';
 using {cuid} from '@sap/cds/common';
 
 entity MappingCustomers : cuid {
@@ -13,7 +12,7 @@ entity MappingCustomers : cuid {
 
 entity Customers {
     key customerId   : String;
-        customerName : String;
+        companyName  : String;
         contactName  : String;
         address      : String;
         city         : String;
@@ -24,21 +23,21 @@ entity Customers {
 };
 
 entity S4SalesOrders      as
-        projection on SalesOrderA2X.A_SalesOrder {
-            SalesOrder            as salesOrder,
-            SoldToParty           as customerId,
-            SalesOrderDate        as salesOrderDate,
-            TotalNetAmount        as totalAmount,
-            OverallDeliveryStatus as status
-        };
+    projection on SalesOrderA2X.A_SalesOrder {
+        SalesOrder            as salesOrder,
+        SoldToParty           as customerId,
+        SalesOrderDate        as salesOrderDate,
+        TotalNetAmount        as totalAmount,
+        OverallDeliveryStatus as status
+    };
 
 entity NorthwindCustomers as
-        projection on northwind.Customers {
-            CustomerID  as customerId,
-            CompanyName as companyName,
-            ContactName as contactName,
-            Address     as address,
-            City        as city,
-            Country     as country,
-            Phone       as phone
-        };
+    projection on northwind.Customers {
+        CustomerID  as customerId,
+        CompanyName as companyName,
+        ContactName as contactName,
+        Address     as address,
+        City        as city,
+        Country     as country,
+        Phone       as phone
+    };
