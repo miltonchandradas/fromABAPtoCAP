@@ -82,8 +82,6 @@ module.exports = async (srv) => {
     if (!req.data?.customerId) return getCustomers();
 
     let customer = await getCustomer();
-    customer = await getS4Orders(customer);
-
     return customer;
   });
 
