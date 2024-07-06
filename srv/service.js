@@ -86,21 +86,47 @@ module.exports = async (srv) => {
   });
 
   srv.on("READ", S4SalesOrders, async (req) => {
-    let orders = await S4_Service.send({
-      query: SELECT.from(S4SalesOrders)
-        .columns(
-          "salesOrder",
-          "customerId",
-          "salesOrderDate",
-          "totalAmount",
-          "status"
-        )
-        .limit(10),
-      headers: {
-        apikey: process.env.apikey,
-        Accept: "application/json",
-      },
-    });
+    let customerId = req.params[0]?.customerId;
+    let orders;
+
+    if (!customerId) {
+      orders = await S4_Service.send({
+        query: SELECT.from(S4SalesOrders)
+          .columns(
+            "salesOrder",
+            "customerId",
+            "salesOrderDate",
+            "totalAmount",
+            "status"
+          )
+          .limit(10),
+        headers: {
+          apikey: process.env.apikey,
+          Accept: "application/json",
+        },
+      });
+    } else {
+      const mapping = await SELECT.one
+        .from(MappingCustomers)
+        .where({ nwCustomerId: customerId });
+
+      orders = await S4_Service.send({
+        query: SELECT.from(S4SalesOrders)
+          .columns(
+            "salesOrder",
+            "customerId",
+            "salesOrderDate",
+            "totalAmount",
+            "status"
+          )
+          .where({ customerId: mapping.s4CustomerId })
+          .limit(10),
+        headers: {
+          apikey: process.env.apikey,
+          Accept: "application/json",
+        },
+      });
+    }
 
     orders.$count = orders.length;
     return orders;
