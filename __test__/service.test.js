@@ -13,7 +13,8 @@ describe("CAP Tests - Group 1", () => {
   });
 
   it("test 2", async () => {
-    const {status} = await GET("/service/fromABAPtoCAPSvcs/Customers")
+    const {status, data} = await GET("/service/fromABAPtoCAPSvcs/Customers")
     expect(status).toBe(200)
+    expect(data.value[0].customerId).toBe('ALFKI')
   });
 });
